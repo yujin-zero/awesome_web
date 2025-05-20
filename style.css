@@ -109,6 +109,7 @@ body {
 
 .project-card:hover {
   transform: translateY(-5px);
+  background-color: #f8f8ff; /* 살짝 연보라 느낌 */
 }
 
 .project-card img {
@@ -122,15 +123,18 @@ body {
 }
 
 .project-content h3 {
-  margin-bottom: 10px;
-  font-size: 1.2rem;
-  font-weight: bold;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #333;
+  border-left: 4px solid #6A49F2;
+  padding-left: 10px;
+  margin-bottom: 12px;
 }
 
 .project-content p {
-  margin: 5px 0;
-  font-size: 0.9rem;
-  color: #444;
+  line-height: 1.5;
+  color: #555; 
+  font-size: 0.95rem;
 }
 
 .tech-stack {
@@ -150,19 +154,25 @@ body {
 }
 
 .project-links a {
-  font-size: 0.85rem;
-  text-decoration: none;
-  color: #333;
-  border-bottom: 1px solid transparent;
-  transition: all 0.2s ease;
+
+  color: black;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-weight: 500;
+  border: none;
+  transition: background-color 0.3s ease;
 }
 
 .project-links a:hover {
-  border-bottom: 1px solid #333;
+  background-color: #f2f0f9;
 }
 
 .project-content p.tech-stack {
-  margin: 8px 0;
+  margin: 12px 0;
+  font-size: 0.85rem;
+  background-color: #f9f9f9;
+  padding: 8px 12px;
+  border-radius: 8px;
 }
 
 .footer {
