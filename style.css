@@ -52,15 +52,14 @@ body {
 }
 
 .tech-stack, .projects {
-  padding: 60px 40px;
   text-align: center;
 }
 
 .tech-stack .icons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
   gap: 30px;
+  justify-items: center;
   margin-top: 30px;
 }
 
@@ -93,48 +92,58 @@ body {
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 30px;
   margin-top: 40px;
 }
 
 .project-card {
+  max-height: 500px;
   background-color: #fff;
-  border-radius: 15px;
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   text-align: left;
+  display: flex;
+  flex-direction: column;
   transition: transform 0.3s ease;
 }
 
 .project-card:hover {
   transform: translateY(-5px);
-  background-color: #f8f8ff; /* 살짝 연보라 느낌 */
 }
 
 .project-card img {
   width: 100%;
-  height: 180px;
-  object-fit: cover;
+  height: 120px; /* 원하는 고정 높이 */
+  object-fit: cover; /* 이미지가 잘려도 꽉 채우기 */
+  display: block;
 }
 
 .project-content {
-  padding: 20px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
 }
 
 .project-content h3 {
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: #333;
-  border-left: 4px solid #6A49F2;
-  padding-left: 10px;
-  margin-bottom: 12px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #111;
+
+  white-space: nowrap;       /* 한 줄만 허용 */
+  overflow: hidden;          /* 넘치는 부분 숨김 */
+  text-overflow: ellipsis;   /* ... 표시 */
 }
 
 .project-content p {
-  line-height: 1.5;
-  color: #555; 
-  font-size: 0.95rem;
+  color: #666;
+  font-size: 0.65rem; /* 기존보다 더 작게 */
+  line-height: 1.4; /* 필요하면 줄간격도 약간 조정 */
+  margin-bottom: 10px;
 }
 
 .tech-stack {
@@ -143,20 +152,23 @@ body {
 }
 
 .tech-stack span {
-  color: #f5a623;
-  font-weight: bold;
+  color: inherit; /* 기존 텍스트 색상과 동일하게 */
+  font-weight: normal; /* 필요 시 굵기도 조절 */
 }
 
 .project-links {
-  margin-top: 15px;
+  margin-top: 8px;
+  margin-bottom: 8px;
   display: flex;
-  gap: 20px;
+  justify-content: flex-start;
+  padding-top: 6px;
+  font-size: 0.55rem; /* 글자 크기 더 작게 */
+  gap: 15px;
 }
 
 .project-links a {
-
   color: black;
-  padding: 8px 12px;
+  /* padding: 8px 12px; */
   border-radius: 6px;
   font-weight: 500;
   border: none;
@@ -168,11 +180,12 @@ body {
 }
 
 .project-content p.tech-stack {
-  margin: 12px 0;
-  font-size: 0.85rem;
-  background-color: #f9f9f9;
-  padding: 8px 12px;
-  border-radius: 8px;
+  font-size: 0.55rem;
+  color: #666;
+  margin: 2px 0;
+  line-height: 1.4;
+  text-align: left;
+  display: block; /* 줄바꿈 문제 방지 */
 }
 
 .footer {
@@ -181,3 +194,18 @@ body {
   font-size: 0.9rem;
   color: #666;
 }
+
+.project-content p.tech-stack span {
+  color: #666 !important;
+  font-weight: normal !important;
+  margin-right: 4px;
+}
+
+/* 전체 컨텐츠 중앙 정렬 */
+body > header,
+body > section,
+body > footer {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
