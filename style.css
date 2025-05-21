@@ -16,6 +16,12 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 20px 40px;
+  font-size: 0.9rem;   /* 전체 폰트 크기 줄임 */
+  color: #666;
+}
+
+.navbar {
+  margin-left: auto;
 }
 
 .navbar ul {
@@ -26,7 +32,12 @@ body {
 
 .navbar a {
   text-decoration: none;
-  color: #333;
+  color: #999;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: #000;         /* hover 시 진하게 */
 }
 
 .hero {
@@ -209,3 +220,57 @@ body > footer {
   margin: 0 auto;
 }
 
+/* 반응형: 태블릿 이하 */
+@media (max-width: 1024px) {
+  .tech-stack .icons {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 반응형: 모바일 */
+@media (max-width: 600px) {
+  .tech-stack .icons {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-img {
+    margin-top: 20px;
+  }
+
+  .header {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.section-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 8px;
+}
+
+.section-subtitle {
+  font-size: 0.95rem;
+  color: #999;
+  margin-bottom: 30px;
+}
