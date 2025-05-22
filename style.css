@@ -242,7 +242,7 @@ body > footer {
   }
 
   .hero {
-    flex-direction: column;
+    flex-direction: column-reverse;
     text-align: center;
   }
 
@@ -256,10 +256,10 @@ body > footer {
     align-items: flex-start;
   }
 
-  .navbar ul {
+  /* .navbar ul {
     flex-direction: column;
     gap: 10px;
-  }
+  } */
 }
 
 .section-title {
